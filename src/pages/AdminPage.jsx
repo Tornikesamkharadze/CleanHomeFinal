@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Table, Tag, Button } from "antd";
+import { Table, Tag, Button, message } from "antd";
 import { CheckCircleOutlined, SyncOutlined } from "@ant-design/icons";
 
 const AdminPage = () => {
@@ -26,7 +26,6 @@ const AdminPage = () => {
     try {
       const newStatus =
         currentStatus === "აქტიური" ? "მოლოდინის რეჟიმში" : "აქტიური"; // Toggle status
-      console.log("Updating order status for orderId:", orderId);
       const response = await fetch(
         `http://localhost:3001/auth/userorders/${orderId}`,
         {
@@ -41,9 +40,6 @@ const AdminPage = () => {
       if (!response.ok) {
         throw new Error("Failed to update order status");
       }
-
-      console.log("Order status updated successfully.");
-
       const updatedUsers = users.map((user) => {
         const updatedOrders = user.orders.map((order) => {
           if (order.orderNo === orderId) {
@@ -54,8 +50,9 @@ const AdminPage = () => {
         return { ...user, orders: updatedOrders };
       });
       setUsers(updatedUsers);
+      message.success("შეკვეთის სტატუსი შეიცვალა");
     } catch (error) {
-      console.error("Error updating order status:", error.message);
+      message.error("შეკვეთის სთატუსი ვერ შეიცვალა");
     }
   };
 
@@ -71,19 +68,16 @@ const AdminPage = () => {
       if (!response.ok) {
         throw new Error("Failed to delete order");
       }
-      console.log("Order deleted successfully.");
       const updatedUsers = users.map((user) => ({
         ...user,
         orders: user.orders.filter((order) => order.orderNo !== orderId),
       }));
       setUsers(updatedUsers);
-      message.success("Order deleted successfully");
+      message.success("შეკვეთა წარმატებით წაიშალა");
     } catch (error) {
-      console.error("Error deleting order:", error.message);
-      message.error("Failed to delete order");
+      message.error("შეკვეთის წაშლა ვერ მოხერხდა");
     }
   };
-  console.log(users);
   const columns = [
     {
       title: "სახელი",
@@ -197,7 +191,7 @@ const AdminPage = () => {
       category: order.services ? order.services.join(", ") : order.category,
     }))
   );
-  console.log(dataSource);
+
   return (
     <>
       <h1>შეცვალე შეკვეთის სტატუსი</h1>

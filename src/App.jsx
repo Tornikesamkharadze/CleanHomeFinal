@@ -13,7 +13,7 @@ import GeneralCleaning from "./components/GeneralCleaning";
 import CraftsMan from "./pages/CraftsMan";
 import UserOrders from "./pages/UserOrders";
 import { FooterWithSocialLinks } from "./components/Footer";
-import ScrollTop from "./components/ScrollTop"; 
+import ScrollTop from "./components/ScrollTop";
 import AdminPage from "./pages/AdminPage";
 import Administrators from "./pages/Administrators";
 import NotFoundPage from "./pages/404";
@@ -92,7 +92,7 @@ function App() {
           />
         </Routes>
       </BrowserRouter>
-       <FooterWithSocialLinks />
+      <FooterWithSocialLinks />
     </>
   );
 }
