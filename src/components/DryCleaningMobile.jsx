@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/DryCleaningMobile.scss";
 import { listingPhotoPaths } from "../data";
-import { ArrowForwardIos, ArrowBackIosNew } from "@mui/icons-material";
 
 const DryCleaningMobile = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,25 +69,7 @@ const DryCleaningMobile = () => {
               <h3 className="service" style={{ paddingTop: "20px" }}>
                 {service.price}
               </h3>
-              <p>{service.description}</p>
-              <div
-                className="prev-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToPrevSlide(e);
-                }}
-              >
-                <ArrowBackIosNew sx={{ fontSize: "15px" }} />
-              </div>
-              <div
-                className="next-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  goToNextSlide(e);
-                }}
-              >
-                <ArrowForwardIos sx={{ fontSize: "15px" }} />
-              </div>
+              <p className="description">{service.description}</p>
             </div>
           ))}
         </div>
