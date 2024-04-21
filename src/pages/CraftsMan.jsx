@@ -31,6 +31,7 @@ const GeneralCleaning = () => {
     category: "სხვადასხვა",
     services: [],
     orderNo: "",
+    status: "მოლოდინის რეჟიმში",
   });
 
   const [formCompleted, setFormCompleted] = useState(false); // State to track form completion

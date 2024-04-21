@@ -83,7 +83,7 @@ const AdminPage = () => {
       message.error("Failed to delete order");
     }
   };
-
+  console.log(users);
   const columns = [
     {
       title: "სახელი",
@@ -94,6 +94,11 @@ const AdminPage = () => {
       title: "გვარი",
       dataIndex: "lastName",
       key: "lastName",
+    },
+    {
+      title: "ტელეფონი",
+      dataIndex: "phoneNumber",
+      key: "phoneNumber",
     },
     {
       title: "შეკვეთის ნომერი",
@@ -115,11 +120,6 @@ const AdminPage = () => {
       dataIndex: "quantity",
       key: "quantity",
     },
-    /* {
-      title: "ელ.ფოსტა",
-      dataIndex: "email",
-      key: "email",
-    }, */
     {
       title: "დასუფთავების საფასური",
       dataIndex: "price",
@@ -194,9 +194,10 @@ const AdminPage = () => {
     user.orders.map((order) => ({
       ...order,
       key: order.orderNo,
+      category: order.services ? order.services.join(", ") : order.category,
     }))
   );
-
+  console.log(dataSource);
   return (
     <>
       <h1>შეცვალე შეკვეთის სტატუსი</h1>

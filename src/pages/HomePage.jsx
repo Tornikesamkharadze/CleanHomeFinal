@@ -3,16 +3,14 @@ import Categories from "../components/Categories";
 import PartnerSlider from "../components/PartnerSlider";
 import Contact from "../components/Contact";
 import TopContent from "../components/TopContent";
-import ThreeColumnCard from "../components/ThreeColumnCard";
 import AccordionC from "../components/AccordionC";
-
+import Services from "../components/Services";
 const HomePage = () => {
   return (
     <>
       <TopContent />
       <Categories />
-      {/*   <ThreeColumnCard /> */}
-  
+      <Services />
       <AccordionC />
       <Contact />
       <PartnerSlider />
