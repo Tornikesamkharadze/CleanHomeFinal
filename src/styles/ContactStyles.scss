@@ -1,0 +1,90 @@
+.contact-container {
+  padding-top: 50px;
+  max-width: 1320px;
+  color: #fff;
+  margin-top: 40px;
+  width: 100%;
+  margin: auto;
+}
+
+.google-map-container {
+  max-width: 600px;
+  width: 100%;
+
+  @media (max-width: 900px) {
+    max-width: none;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 899px) {
+  .contact_wrapper {
+    .contact-method {
+      margin-top: 0px;
+    }
+  }
+}
+
+.image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-image: url("../../public/assets/login.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.contact-info {
+  width: 100%;
+  background-color: rgba(16, 45, 49, 0.7);
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+
+  @media (max-width: 900px) {
+    display: block;
+  }
+}
+
+.contact-details {
+  flex: 1;
+  padding: 20px;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.location {
+  p {
+    margin: 5px 0;
+  }
+}
+
+.contact-methods {
+  flex: 1;
+  padding: 20px;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.contact-method {
+  margin-top: 20px;
+  p {
+    margin: 5px 0;
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  #contact {
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,84 @@
+.user-orders-container {
+  background: url("../../public/assets/bubble.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px; /* Added padding for better spacing */
+  min-height: 74vh;
+
+  .no_order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #457ef0;
+    font-size: 2rem; /* Adjusted font size for smaller screens */
+  }
+}
+
+.user-order {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  max-width: 90%; /* Adjusted max-width for smaller screens */
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Centered and adjusted margin */
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: auto; /* Removed fixed height */
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+
+  .order-details {
+    margin-top: 16px;
+
+    .title {
+      color: #457ef0;
+    }
+
+    .list {
+      color: #24355a;
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 1rem; /* Adjusted font size for smaller screens */
+      line-height: 1.4;
+      color: #333;
+
+      &:first-child {
+        font-weight: bold;
+        color: #000;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .user-orders-container {
+    padding: 40px; /* Increased padding for larger screens */
+  }
+
+  .user-order {
+    max-width: 45%; /* Adjusted max-width for larger screens */
+  }
+
+  .order-details .title {
+    font-size: 2rem; /* Adjusted font size for screens larger than 768px */
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .order-details .title {
+      font-size: 5vw; /* Adjusted font size for screens less than 1000px */
+    }
+  }
+}
