@@ -35,15 +35,22 @@ const LoginPage = () => {
 
   const onFinish = async (values) => {
     const { email, password } = values;
+    
+    // Convert email and password to lowercase
+    const lowerCaseEmail = email.toLowerCase();
+    const lowerCasePassword = password.toLowerCase();
 
     try {
-      const response = await fetch("https://cleanhomefinal-1.onrender.com/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
+      const response = await fetch(
+        "https://cleanhomefinal-1.onrender.com/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: lowerCaseEmail, password: lowerCasePassword }),
+        }
+      );
 
       if (!response.ok) {
         if (response.status === 400) {
@@ -100,7 +107,7 @@ const LoginPage = () => {
             },
             {
               required: true,
-              message: "გტხოვთ შეიყვანეთ თქვენი ელ.ფოსტა!",
+              message: "გთხოვთ შეიყვანეთ თქვენი ელ.ფოსტა!",
             },
           ]}
         >
