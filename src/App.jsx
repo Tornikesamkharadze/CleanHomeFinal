@@ -28,7 +28,9 @@ function App() {
         // Retrieve the JWT token from localStorage
         const token = localStorage.getItem("token");
         if (!token) {
-          throw new Error("Token not found");
+          // If token doesn't exist, set user state to null and return
+          setUser(null);
+          return;
         }
 
         // Make a GET request to fetch the user data
@@ -38,7 +40,6 @@ function App() {
           },
         });
         setUser(response.data);
-        /*  console.log(response.data.role);  */
       } catch (error) {
         console.error("Error fetching user:", error);
       }
@@ -46,6 +47,7 @@ function App() {
 
     fetchUser();
   }, []);
+
   return (
     <>
       <BrowserRouter>
