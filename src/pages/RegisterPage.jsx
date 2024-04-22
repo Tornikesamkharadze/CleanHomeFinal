@@ -61,7 +61,7 @@ const RegisterPage = () => {
 
     try {
       // Send formData to backend
-      const response = await fetch("http://localhost:3001/auth/register", {
+      const response = await fetch("https://cleanhomefinal-1.onrender.com/auth/register", {
         method: "POST",
         body: formData,
       });

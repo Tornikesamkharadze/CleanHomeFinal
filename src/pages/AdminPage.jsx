@@ -11,7 +11,7 @@ const AdminPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:3001/auth/userorders");
+      const response = await fetch("https://cleanhomefinal-1.onrender.com/auth/userorders");
       if (!response.ok) {
         throw new Error("Failed to fetch users");
       }
@@ -27,7 +27,7 @@ const AdminPage = () => {
       const newStatus =
         currentStatus === "აქტიური" ? "მოლოდინის რეჟიმში" : "აქტიური"; // Toggle status
       const response = await fetch(
-        `http://localhost:3001/auth/userorders/${orderId}`,
+        `https://cleanhomefinal-1.onrender.com/auth/userorders/${orderId}`,
         {
           method: "PATCH",
           headers: {
@@ -59,7 +59,7 @@ const AdminPage = () => {
   const deleteOrder = async (orderId) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/auth/userorders/${orderId}`,
+        `https://cleanhomefinal-1.onrender.com/auth/userorders/${orderId}`,
         {
           method: "DELETE",
         }

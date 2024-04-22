@@ -37,7 +37,7 @@ const LoginPage = () => {
     const { email, password } = values;
 
     try {
-      const response = await fetch("http://localhost:3001/auth/login", {
+      const response = await fetch("https://cleanhomefinal-1.onrender.com/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

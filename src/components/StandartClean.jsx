@@ -86,7 +86,7 @@ const StandartClean = () => {
       // Generate a unique order number
       const orderNumber = generateOrderNumber();
 
-      await fetch("http://localhost:3001/auth/order", {
+      await fetch("https://cleanhomefinal-1.onrender.com/auth/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

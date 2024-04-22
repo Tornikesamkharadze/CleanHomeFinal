@@ -8,7 +8,7 @@ const Administrators = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/auth/users");
+        const response = await axios.get("https://cleanhomefinal-1.onrender.com/auth/users");
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching users:", error);
@@ -20,7 +20,7 @@ const Administrators = () => {
 
   const updateUserRole = async (userId, role) => {
     try {
-      await axios.patch(`http://localhost:3001/auth/users/${userId}`, {
+      await axios.patch(`https://cleanhomefinal-1.onrender.com/auth/users/${userId}`, {
         role,
       });
       setUsers(

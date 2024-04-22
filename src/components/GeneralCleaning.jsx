@@ -92,7 +92,7 @@ const GeneralCleaning = () => {
     try {
       const orderNumber = generateOrderNumber();
       // Use the userId obtained from Redux store
-      await fetch("http://localhost:3001/auth/order", {
+      await fetch("https://cleanhomefinal-1.onrender.com/auth/order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

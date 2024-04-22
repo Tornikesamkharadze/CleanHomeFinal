@@ -32,7 +32,7 @@ function App() {
         }
 
         // Make a GET request to fetch the user data
-        const response = await axios.get("http://localhost:3001/auth/user", {
+        const response = await axios.get("https://cleanhomefinal-1.onrender.com/auth/user", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
